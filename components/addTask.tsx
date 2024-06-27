@@ -22,6 +22,7 @@ export default function AddTask(props: {
       }
 
       await getData(props.taskList)
+      setText(""); //Cuong them
     } catch (error) {
       console.log(error);
     }
