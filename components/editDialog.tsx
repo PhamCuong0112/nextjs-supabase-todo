@@ -2,13 +2,14 @@ import { supabase } from "@/utils/supabase/supabase"
 import { Dispatch, SetStateAction, ReactElement, useState } from "react"
 import getData from "./getData"
 
-export default function EditDialog(props: {
+export default function EditDialog( props: {
   id: number,
+  oldtext: string,
   showModal: Dispatch<SetStateAction<boolean>>,
   taskList: Dispatch<SetStateAction<Array<ReactElement>>>
 }) {
   const { showModal, taskList } = props;
-  const [text, setText] = useState("");
+  const [text, setText] = useState(props.oldtext);
 
   const onSubmit = async (event: any) => {
     event.preventDefault();

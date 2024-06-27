@@ -27,7 +27,7 @@ export default function Task(props: { id: number, text: string, update_at: strin
         <button type="button" className="ml-2 w-9 text-red-500 hover:text-red-600" onClick={() => setShowRemoveModal(true)}>削除</button>
       </div>
       {showEditModal ? (
-        <EditDialog id={id} taskList={props.taskList} showModal={setShowEditModal}></EditDialog>
+        <EditDialog id={id}  oldtext={text} taskList={props.taskList} showModal={setShowEditModal}></EditDialog>
       ) : null}
       {showRemoveModal ? (
         <RemoveDialog id={id} taskList={props.taskList} showModal={setShowRemoveModal}></RemoveDialog>
