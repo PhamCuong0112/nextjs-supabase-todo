@@ -4,6 +4,7 @@ import Link from 'next/link';
 import { usePathname, useRouter } from 'next/navigation';
 import ModalCore from './modalCore';
 import { ModalType } from './modal/modalType';
+
 const Navigation = ({ session }: { session: Session | null }) => {
   const pathname = usePathname();
   const router = useRouter();
@@ -15,8 +16,11 @@ const Navigation = ({ session }: { session: Session | null }) => {
       <div className="flex items-center justify-between px-4 py-2 bg-white shadow-md">
         <nav className="hidden md:flex space-x-4">
           <div>
-            <Link className="text-gray-600 hover:text-blue-600" href="/">
-              Home
+            <Link
+              className="text-gray-600 hover:text-blue-600"
+              href="/todolist"
+            >
+              MyTodo
             </Link>
           </div>
           {session ? (
