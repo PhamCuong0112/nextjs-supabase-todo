@@ -1,3 +1,4 @@
+import SupabaseListener from '@/components/supabaseListener'
 import './globals.css'
 
 const defaultUrl = process.env.VERCEL_URL
@@ -17,10 +18,16 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
+      
       <body className="bg-background text-foreground">
+        <div>
+          <SupabaseListener />
+        </div>
+
         <main className="min-h-screen flex flex-col items-center">
           {children}
         </main>
+
       </body>
     </html>
   )
